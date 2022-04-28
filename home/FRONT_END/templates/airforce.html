@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr style="background-color:#99FFFF">
+        <th>Country Name</th>
+        <th>Aircraft Rank</th>
+        <th>Fighter Aircrafts</th>
+        <th>Transport Aircrafts</th>
+        <th>Attack Aircrafts</th>
+        <th>Trainer Aircrafts</th>
+        <th>Helicopters</th>
+        <th>Attack Helicopters</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for e in L%}
+        <tr>
+          <td>{{ e[0] }}</td>
+          <td>{{ e[1] }}</td>
+          <td>{{ e[2] }}</td>
+          <td>{{ e[3] }}</td>
+          <td>{{ e[4] }}</td>
+          <td>{{ e[5] }}</td>
+          <td>{{ e[6] }}</td>
+          <td>{{ e[7] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+
+
+{% block scripts %}
+  <script>
+$(document).ready(function() {
+    $('#data').DataTable( {
+        responsive: true,
+        "pageLength": 10
+    } );
+} );
+ </script>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base1.html" %}
+
+
+{% block content %}
+
+
+
+
+<form class="form-inline" action="{{url_for('contribute_helper')}}" method="post">
+  <label class="sr-only" for="city_name">City Name</label>
+  <input type="text" class="form-control mb-2 mr-sm-2" id="city_name" name="city_name" placeholder="Enter the name of the city">
+
+
+<form class="form-inline" action="{{url_for('contribute_helper')}}" method="post">
+  <label class="sr-only" for="state_name">State Name</label>
+  <input type="text" class="form-control mb-2 mr-sm-2" id="state_name" name="state_name" placeholder="Enter the name of the state">
+
+
+<form class="form-inline" action="{{url_for('contribute_helper')}}" method="post">
+  <label class="sr-only" for="country_name">Country Name</label>
+  <input type="text" class="form-control mb-2 mr-sm-2" id="country_name" name="country_name" placeholder="Enter the name of the country">
+
+
+<form class="form-inline" action="{{url_for('contribute_helper')}}" method="post">
+  <label class="sr-only" for="city_id">City Name</label>
+  <input type="number" class="form-control mb-2 mr-sm-2" id="city_id" name="city_id" placeholder="Enter the city-id">
+
+
+<form class="form-inline" action="{{url_for('contribute_helper')}}" method="post">
+  <label class="sr-only" for="state_id">State Name</label>
+  <input type="number" class="form-control mb-2 mr-sm-2" id="state_id" name="state_id" placeholder="Enter the state-id">
+
+
+<form class="form-inline" action="{{url_for('contribute_helper')}}" method="post">
+  <label class="sr-only" for="country_id">Country Name</label>
+  <input type="number" class="form-control mb-2 mr-sm-2" id="country_id" name="country_id" placeholder="Enter the country-id">
+
+
+  <form class="form-inline" action="{{url_for('contribute_helper')}}" method="post">
+    <label class="sr-only" for="state_code">State Code</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="state_code" name="state_code" placeholder="Enter the state-code">
+  
+
+  <button id="myButton" button type="submit" class="btn btn-primary mb-2">Submit Data</button>
+
+</form>
+
+ <script>
+
+  function redirect(){
+    fname=document.forms[0].statename.value;
+  }
+  </script>
+{% endblock %}
+
+
+{% block scripts %}
+  <script>
+$(document).ready(function() {
+    $('#data').DataTable( {
+        responsive: true,
+        "pageLength": 10
+    } );
+} );
+ </script>
+{% endblock %}

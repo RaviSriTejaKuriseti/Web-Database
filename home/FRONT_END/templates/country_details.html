@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr style="background-color:#99FFFF">
+        <th>Country Name</th>
+        <th>ISO3</th>
+        <th>ISO2</th>
+        <th>Capital</th>
+        <th>Currency</th>
+        <th>Region</th>
+        <th>Sub-Region</th>
+        <th>Population</th>
+        <th>Area(in sq.km)</th>\
+        <th>GDP(in Million USD)</th>
+        <th>Fire Power Ranking</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for e in L %}
+        <tr>
+          <td>{{ e[0] }}</td>
+          <td>{{ e[1] }}</td>
+          <td>{{ e[2] }}</td>
+          <td>{{ e[3] }}</td>
+          <td>{{ e[4] }}</td>
+          <td>{{ e[5] }}</td>
+          <td>{{ e[6] }}</td>
+          <td>{{ e[7] }}</td>
+          <td>{{ e[8] }}</td>
+          <td>{{ e[9] }}</td>
+          <td>{{ e[10] }}</td>
+
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+
+{% block scripts %}
+  <script>
+$(document).ready(function() {
+    $('#data').DataTable( {
+        responsive: true,
+        "pageLength": 10
+    } );
+} );
+ </script>
+{% endblock %}

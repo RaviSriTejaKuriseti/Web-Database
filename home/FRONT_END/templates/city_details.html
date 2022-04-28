@@ -1,0 +1,40 @@
+{% extends "base2.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr style="background-color:#99FFFF">
+        <th>City Name</th>
+        <th>City Id</th>
+        <th>State Name</th>
+        <th>State Id</th>
+        <th>Country Name</th>
+        <th>Country Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for e in L%}
+        <tr>
+          <td>{{ e[0] }}</td>
+          <td>{{ e[1] }}</td>
+          <td>{{ e[2] }}</td>
+          <td>{{ e[3] }}</td>
+          <td>{{ e[4] }}</td>
+          <td>{{ e[5] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+
+{% block scripts %}
+  <script>
+$(document).ready(function() {
+    $('#data').DataTable( {
+        responsive: true,
+        "pageLength": 10
+    } );
+} );
+ </script>
+{% endblock %}

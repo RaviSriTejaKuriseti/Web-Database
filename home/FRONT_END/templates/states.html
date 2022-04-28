@@ -1,0 +1,17 @@
+{% extends "base1.html" %}
+
+
+{% block content %}
+
+
+<form class="form-inline" action="{{url_for('state_helper')}}" method="post">
+  <label class="sr-only" for="country_name">Country Name</label>
+  <input type="text" class="form-control mb-2 mr-sm-2" id="country_name" name="country_name" placeholder="Enter the name of the country">
+
+  
+
+  <button type="submit" class="btn btn-primary mb-2">Get Results</button>
+</form>
+{% endblock %}
+
+

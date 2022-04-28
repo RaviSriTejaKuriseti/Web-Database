@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr style="background-color:#99FFFF">
+        <th>Fire Power Rank</th>
+        <th>Country Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for e in L%}
+        <tr>
+          <td>{{ e[0] }}</td>
+          <td>{{ e[1] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+
+{% block scripts %}
+  <script>
+$(document).ready(function() {
+    $('#data').DataTable( {
+        responsive: true,
+        "pageLength": 10
+    } );
+} );
+ </script>
+{% endblock %}
